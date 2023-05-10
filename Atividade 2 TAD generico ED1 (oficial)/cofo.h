@@ -1,4 +1,4 @@
-//FEITO POR ANDREI RAMOS LOPES
+// FEITO POR ANDREI RAMOS LOPES
 #ifndef _GCOFO_H_
 #define _GCOFO_H_
 #ifdef _GCOFO_C_
@@ -19,6 +19,7 @@ int gcofInsert(gCofo *c, void *item);
 void *gcofRemove(gCofo *c, void *key, int (*cmp)(void *, void *));
 void *gcofQuery(gCofo *c, void *key, int (*cmp)(void *, void *));
 int gcofAll(gCofo *c);
+int gcofClear(gCofo *c, int (*cmp)(void *, void *));
 int colDestroy(gCofo *c);
 
 #else
@@ -39,5 +40,6 @@ extern void *gcofRemove(gCofo *c, void *key, int (*cmp)(void *, void *));
 extern void *gcofQuery(gCofo *c, void *key, int (*cmp)(void *, void *));
 int gcofAll(gCofo *c);
 extern int colDestroy(gCofo *c);
+extern int gcofClear(gCofo *c, int (*cmp)(void *, void *));
 #endif
 #endif

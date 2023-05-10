@@ -107,3 +107,16 @@ void *gcofRemove(gCofo *gc, void *key, int (*cmp)(void *, void *)) {
   }
   return NULL;
 }
+
+int gcofClear(gCofo *gc,int (*cmp)(void *,void *)){
+  if(gc!=NULL){
+    if(gc->numItens>0){
+      int i;
+      for(i=gc->numItens-1;i>=0;i--){
+        gcofRemove(gc, gc->item[i], cmp);
+      }
+        return 1;
+    }
+  }
+  return 0;
+}
